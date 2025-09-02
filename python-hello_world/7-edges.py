@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# Word to cut.
 word = "Holberton"
 # This prints the first 3 letters
 print(f"First 3 letters: {word[:3]}")
