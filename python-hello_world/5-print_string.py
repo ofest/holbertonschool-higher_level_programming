@@ -1,6 +1,4 @@
 #!/usr/bin/python3
 str = "Holberton School"
-print(str * 3)
-# Print the string three times, followed by a new line
-print(str[:9])
-# Print the first 9 characters of the string
+print(3*str)
+print(str[0:9])
