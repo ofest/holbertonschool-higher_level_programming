@@ -6,4 +6,3 @@ if __name__ == "__main__":
     for name in defined_names:
         if name[:2] != "__":
             print(name)
-
