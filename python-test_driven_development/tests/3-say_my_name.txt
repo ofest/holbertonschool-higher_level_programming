@@ -1,0 +1,21 @@
+"""
+-------------------------------
+Doctest for module 3-say_my.py
+-------------------------------
+
+say_my_name(first_name, last_name="")
+
+Prints a formatted string with the user's full name.
+
+Parameters:
+    first_name (str): The first name of the user.
+    last_name (str, optional): The last name of the user. Defaults to an empty string.
+
+Raises:
+    TypeError: If first_name or last_name is not a string.
+
+Example:
+    say_my_name("John", "Doe")  # Outputs: My name is John Doe
+    say_my_name("Jane")          # Outputs: My name is Jane
+    
+"""
