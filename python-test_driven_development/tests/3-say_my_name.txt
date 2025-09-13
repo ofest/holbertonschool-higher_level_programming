@@ -1,21 +1,35 @@
-"""
 -------------------------------
 Doctest for module 3-say_my.py
 -------------------------------
 
-say_my_name(first_name, last_name="")
+Using ``say_my_name``
 
-Prints a formatted string with the user's full name.
+Import module:
+       >>> say_my_name = __import__('3-say_my_name').say_my_name
 
-Parameters:
-    first_name (str): The first name of the user.
-    last_name (str, optional): The last name of the user. Defaults to an empty string.
+Test the cases:
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
 
-Raises:
-    TypeError: If first_name or last_name is not a string.
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
 
-Example:
-    say_my_name("John", "Doe")  # Outputs: My name is John Doe
-    say_my_name("Jane")          # Outputs: My name is Jane
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+    >>> say_my_name("White", 12)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
     
-"""
