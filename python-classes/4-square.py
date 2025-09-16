@@ -12,7 +12,7 @@ class Square:
     def size(self):
         """Retrieve size"""
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """Set size with validation"""
