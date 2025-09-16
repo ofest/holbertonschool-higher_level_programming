@@ -3,11 +3,11 @@
 
 
 class Square:
+    """Represent a Square"""
     def __init__(self, size=0):
-        """Represent a Square"""
+        """Initialize the private instance attribute: size
+        Raise the TypeError or ValueError according to given condition"""
         self.__size = size
-        """Initialize the private instance attribute to define a square
-        Raise the type or value error exception according to given condition"""
         if not isinstance(size, int):
             raise TypeError("size must be an integer.")
         elif size < 0:
