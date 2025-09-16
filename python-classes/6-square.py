@@ -6,35 +6,36 @@ class Square:
     """Represent a Square"""
     def __init__(self, size=0, position=(0, 0)):
         """ Initialize the attribute : size"""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
-    """Size getter"""
     @property
     def size(self):
+        """Size getter"""
         return self.__size
 
-    """Position getter"""
     @property
     def position(self):
+        """Position getter"""
         return self.__position
 
-    """Size setter"""
     @size.setter
     def size(self, value):
+        """Size setter"""
         if not isinstance(value, int):
-            raise TypeError("size must be an integer.")
+            raise TypeError("size must be an integer")
         if value < 0:
-            raise ValueError("size must be >= 0.")
+            raise ValueError("size must be >= 0")
         self.__size = value
 
-    """Position setter"""
     @position.setter
     def position(self, value):
+        """Position setter"""
         if not isinstance(value, tuple) or len(value) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers.")
+            raise TypeError("position must be a tuple of 2 positive integers")
         if not all(isinstance(num, int) and num >= 0 for num in value):
-            raise TypeError("position must be a tuple of 2 positive integers.")
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     """Create public instance method: area"""
     def area(self):
@@ -44,6 +45,10 @@ class Square:
     Line is not filles with spaces when position[1] > 0
     """
     def my_print(self):
+        if self.__size == 0:
+            print("")
+            return
+
         for _ in range(self.__position[1]):
             print("")
         for _ in range(self.__size):
