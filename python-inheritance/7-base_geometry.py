@@ -3,13 +3,15 @@
 
 
 class BaseGeometry():
-    """Public instance method"""
+    """Defines methods for BaseGeomatery"""
     def area(self):
+        """Defines area of the object"""
         raise Exception("area() is not implemented")
 
-    """Public instance method that validates the value"""
+
     def integer_validator(self, name, value):
-        if not isinstance(value, int):
+        """Validates the value as an integer"""
+        if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
