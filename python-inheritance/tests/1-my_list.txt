@@ -1,0 +1,49 @@
+#!/usr/bin/python3
+"""Doctest for 1-my_list.py
+"""
+______________________________________________________________________
+Run python3 -m doctest -v ./tests/1-my_list.txt to print detailed log
+______________________________________________________________________
+
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.print_sorted()
+[1, 2, 3]
+
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(3)
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+[1, 2, 3]
+
+
+>>> my_list = MyList()
+>>> my_list.append(-1)
+>>> my_list.append(-3)
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+[-3, -1, 2]
+
+
+>>> my_list = MyList(['car','bike','train'])
+>>> my_list.print_sorted()
+['bike', 'car', 'train']
+
+>>> print(issubclass(MyList, list))
+True
+
+>>> print(str(my_list))
+['car', 'bike', 'train']
