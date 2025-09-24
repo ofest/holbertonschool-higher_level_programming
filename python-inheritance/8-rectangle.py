@@ -16,11 +16,10 @@ class BaseGeometry():
 
 
 class Rectangle(BaseGeometry):
-    """Represents a rectangle using attributes from  BaseGeometry."""
+    """Represents a rectangle, inherits from BaseGeometry."""
 
- 
     def __init__(self, width, height):
         self.integer_validator("width", width)
-        self.__width = width
         self.integer_validator("height", height)
+        self.__width = width
         self.__height = height
