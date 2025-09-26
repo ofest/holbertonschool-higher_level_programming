@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 
 import math
 from abc import ABC, abstractmethod
@@ -44,6 +46,5 @@ class Rectangle(Shape):
 
 
 def shape_info(shape):
-    """Prints area and perimeter of any shape (duck typing)."""
     print(f"Area: {shape.area()}")
     print(f"Perimeter: {shape.perimeter()}")
