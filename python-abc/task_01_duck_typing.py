@@ -27,12 +27,12 @@ class Circle(Shape):
 
     def area(self):
         """Method that return the area of a circle"""
-        return math.pi * (self.radius ** 2)
+        return math.fabs(math.pi * (self.radius**2))
+
 
     def perimeter(self):
         """Method that return the perimeter of a circle """
-        return 2 * math.pi * self.radius
-
+        return math.fabs(2 * math.pi * self.radius)
 
 class Rectangle(Shape):
     """Rectangle shape defined by width and height."""
