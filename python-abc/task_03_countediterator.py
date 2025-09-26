@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 class CountedIterator:
     def __init__(self, iterable):
         self.iterator = iter(iterable)  # Create an iterator from the iterable
