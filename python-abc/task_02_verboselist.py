@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 class VerboseList(list):
     """VerboseList that gives notifications on list operations."""
 
