@@ -4,6 +4,6 @@
 
 def read_file(filename=""):
     """reads a text file"""
-    with open('my_file_0.txt', encoding="utf-8") as f:
-        for line in f:
-            print(line, end="")
+    with open(filename) as file_object:
+        contents = file_object.read()
+        print(contents, end="")
