@@ -9,7 +9,8 @@ def class_to_json(obj):
 
     for key, value in vars(obj).items():
 
-        if isinstance(value, (list, dict, str, int, bool)):
+        if isinstance(value, (list, dict, str, int, bool))\
+                and not key.startswith('__'):
             serialized_dict[key] = value
 
     return serialized_dict
