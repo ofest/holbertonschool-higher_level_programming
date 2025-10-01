@@ -5,7 +5,7 @@ Function that represents the Pascals triangle
 
 
 def pascal_triangle(n):
-    
+
     triangle = []
 
     if n <= 0:
