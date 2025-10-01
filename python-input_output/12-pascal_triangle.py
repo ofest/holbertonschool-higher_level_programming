@@ -5,21 +5,20 @@ Function that represents the Pascals triangle
 
 
 def pascal_triangle(n):
-
-    triangle = []
-
+    """Function that creates a pascal_triangle"""
     if n <= 0:
         return []
 
-    triangle.append([1])
-
-    for i in range(1, n):
-        row = [1]
-        last_row = triangle[i - 1]
+    res = []
+    for i in range(n):
+        to_add = [1]
 
         for j in range(1, i):
-            row.append(last_row[j - 1] + last_row[j])
+            to_add.append(res[i - 1][j - 1] + res[i - 1][j])
 
-        row.append(1)
-        triangle.append(row)
-    return triangle
+        if i > 0:
+            to_add.append(1)
+
+        res.append(to_add)
+
+    return res
