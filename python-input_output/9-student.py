@@ -4,7 +4,7 @@
 
 
 class Student ():
-
+    """inittition attributes"""
     def __init__(self, first_name, last_name, age):
         """Public instance attributes"""
         self.first_name = first_name
@@ -21,6 +21,6 @@ class Student ():
             return self.__dict__
         if isinstance(attrs, list):
             for attr in attr:
-                if hasattr(self, attr):  # Check if the attribute exists
-                    result[attr] = getattr(self, attr)  # Use getattr to
+                if hasattr(self, attr):
+                    result[attr] = getattr(self, attr)
         return result
