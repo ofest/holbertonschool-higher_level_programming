@@ -39,10 +39,10 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
                              not found on this server.")
 
 
-def run(server_class=HTTPServer, handler_class=SimpleAPIHandler):
-    server_address = ("", 8000)
+def run(server_class=HTTPServer, handler_class=SimpleAPIHandler, port=8000):
+    server_address = ("", port)
     httpd = server_class(server_address, handler_class)
-    print ("Server running on http://localhost:8000{}".format(8000))
+    print ("Server running on http://localhost:8000{}".format(port))
     httpd.serve_forever()
 
 
