@@ -1,3 +1,4 @@
+-- Creates a table second_table in hbtn_0c_0 database and add multiples rows.
 CREATE TABLE IF NOT EXISTS second_table (
      id INT,
      name VARCHAR(256),
