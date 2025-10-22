@@ -1,4 +1,4 @@
---lists all records of the table in the SQL server
+-- Lists all records of the table in the SQL server
 SELECT score, name 
 FROM second_table 
 WHERE name IS NOT NULL 
