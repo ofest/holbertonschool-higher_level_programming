@@ -1,17 +1,31 @@
 #!/usr/bin/python3
-""" Lists all states from the database hbtn_0e_0_usa
+"""
+Safe search: lists all states with a given name (protected from SQL injection)
 """
 import MySQLdb
-from sys import argv
+import sys
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(host='localhost', port=3306,
-                         user=argv[1], passwd=argv[2], db=argv[3])
+    if len(sys.argv) != 5:
+
+        print("Usage: {} <user> <passwd> <db> <state_name>".format(sys.argv[0]))
+        sys.exit(1)
+
+    user = sys.argv[1]
+    passwd = sys.argv[2]
+    db_name = sys.argv[3]
+    state_name = sys.argv[4]
+
+    db = MySQLdb.connect(host="localhost",
+                         port=3306,
+                         user=user,
+                         passwd=passwd,
+                         db=db_name)
     cur = db.cursor()
-    cur.execute("SELECT * \
-    FROM states \
-    WHERE name = %s \
-    ORDER BY states.id", (argv[4],))
-    [print(state) for state in cur.fetchall()]
+
+    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC", (state_name,))
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
     cur.close()
     db.close()
