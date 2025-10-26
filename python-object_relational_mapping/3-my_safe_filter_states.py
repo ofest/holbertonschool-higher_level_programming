@@ -8,7 +8,8 @@ import sys
 if __name__ == "__main__":
     if len(sys.argv) != 5:
 
-        print("Usage: {} <user> <passwd> <db> <state_name>".format(sys.argv[0]))
+        print("Usage: {} <user> <passwd> \
+              <db> <state_name>".format(sys.argv[0]))
         sys.exit(1)
 
     user = sys.argv[1]
@@ -23,7 +24,8 @@ if __name__ == "__main__":
                          db=db_name)
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC", (state_name,))
+    cur.execute("SELECT * FROM states WHERE name = \
+                 %s ORDER BY id ASC", (state_name,))
     rows = cur.fetchall()
     for row in rows:
         print(row)
