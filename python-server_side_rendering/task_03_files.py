@@ -2,22 +2,25 @@ from flask import Flask, render_template, request
 import json
 import csv
 
+
 app = Flask(__name__)
+
 
 def read_json(file_path):
     with open(file_path) as f:
         return json.load(f)
+
 
 def read_csv(file_path):
     products = []
     with open(file_path) as f:
         reader = csv.DictReader(f)
         for row in reader:
-            # Convert id to int and price to float
             row['id'] = int(row['id'])
             row['price'] = float(row['price'])
             products.append(row)
     return products
+
 
 @app.route('/products')
 def products():
@@ -31,18 +34,14 @@ def products():
     else:
         return render_template('product_display.html', error="Wrong source")
 
-
     if product_id:
-        try:
-            product_id = int(product_id)
-            filtered = [p for p in data if p['id'] == product_id]
-            if not filtered:
-                return render_template('product_display.html', error="Product not found")
-            data = filtered
-        except ValueError:
-            return render_template('product_display.html', error="Invalid id")
+
+        filtered = [p for p in data if p['id'] == product_id]
+        if not filtered:
+            return render_template('product_display.html', error="Product not found")
 
     return render_template('product_display.html', products=data)
+
 
 @app.route('/')
 def home():
@@ -61,4 +60,4 @@ def contact():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
-
+    
